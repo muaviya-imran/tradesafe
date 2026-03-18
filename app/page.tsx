@@ -1,5 +1,6 @@
 import { ChevronDownIcon, ChevronRightIcon } from '@/components/icons';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Dashboard() {
   const RolesList = [
@@ -41,8 +42,9 @@ export default function Dashboard() {
 
           <div className="mt-4 grid grid-cols-2 gap-4">
             {RolesList.map((role, index) => (
-              <div
+              <Link
                 key={role.name}
+                href="/dashboard"
                 className={`flex cursor-pointer items-center justify-between gap-4 rounded-lg border bg-white/5 px-4 py-2 transition hover:bg-white/10 ${index === RolesList.length - 1 ? 'col-span-2 mx-auto w-1/2 justify-between' : ''}`}
               >
                 <div className="flex items-center gap-4">
@@ -56,7 +58,7 @@ export default function Dashboard() {
                   <p>{role.name}</p>
                 </div>
                 <ChevronRightIcon />
-              </div>
+              </Link>
             ))}
           </div>
         </div>
