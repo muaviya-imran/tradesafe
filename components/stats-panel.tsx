@@ -1,23 +1,23 @@
-'use client'
+'use client';
 
-import { TrendingUp, TrendingDown } from 'lucide-react'
+import { TrendingUp, TrendingDown } from 'lucide-react';
 
 interface StatItemProps {
-  label: string
-  value: string | number
-  change?: number
-  trend?: 'up' | 'down'
+  label: string;
+  value: string | number;
+  change?: number;
+  trend?: 'up' | 'down';
 }
 
 function StatItem({ label, value, change, trend }: StatItemProps) {
-  const isPositive = trend === 'up'
-  const trendColor = isPositive ? 'text-green-500' : 'text-red-500'
+  const isPositive = trend === 'up';
+  const trendColor = isPositive ? 'text-green-500' : 'text-red-500';
 
   return (
-    <div className="bg-bg-tertiary border border-border-light rounded-lg p-4 hover:border-accent-orange transition">
-      <p className="text-text-secondary text-xs mb-2">{label}</p>
+    <div className="bg-bg-tertiary border-border-light hover:border-accent-orange rounded-lg border p-4 transition">
+      <p className="text-text-secondary mb-2 text-xs">{label}</p>
       <div className="flex items-center justify-between">
-        <p className="text-accent-orange font-bold text-xl">{value}</p>
+        <p className="text-accent-orange text-xl font-bold">{value}</p>
         {change !== undefined && trend && (
           <div className={`flex items-center gap-1 ${trendColor}`}>
             {trend === 'up' ? <TrendingUp size={16} /> : <TrendingDown size={16} />}
@@ -26,23 +26,19 @@ function StatItem({ label, value, change, trend }: StatItemProps) {
         )}
       </div>
     </div>
-  )
+  );
 }
 
 interface StatsPanelProps {
-  title: string
-  stats: StatItemProps[]
-  columns?: number
+  title: string;
+  stats: StatItemProps[];
+  columns?: number;
 }
 
-export default function StatsPanel({
-  title,
-  stats,
-  columns = 4,
-}: StatsPanelProps) {
+export default function StatsPanel({ title, stats, columns = 4 }: StatsPanelProps) {
   return (
-    <div className="bg-bg-tertiary border border-border-light rounded-lg p-6">
-      <h2 className="text-text-primary font-bold text-lg mb-6">{title}</h2>
+    <div className="bg-bg-tertiary border-border-light rounded-lg border p-6">
+      <h2 className="text-text-primary mb-6 text-lg font-bold">{title}</h2>
       <div
         className={`grid gap-4`}
         style={{
@@ -54,5 +50,5 @@ export default function StatsPanel({
         ))}
       </div>
     </div>
-  )
+  );
 }

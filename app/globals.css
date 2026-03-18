@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --font-poppins: var(--font-poppins), sans-serif;
@@ -30,7 +30,7 @@
   }
 
   body {
-    @apply h-full w-full bg-bg-primary text-text-primary antialiased;
+    @apply bg-bg-primary text-text-primary h-full w-full antialiased;
     -webkit-font-smoothing: antialiased;
     font-family: var(--font-sans);
     -moz-osx-font-smoothing: grayscale;

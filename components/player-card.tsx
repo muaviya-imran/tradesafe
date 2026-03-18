@@ -1,19 +1,19 @@
-'use client'
+'use client';
 
-import Image from 'next/image'
-import { Star, TrendingUp } from 'lucide-react'
+import Image from 'next/image';
+import { Star, TrendingUp } from 'lucide-react';
 
 interface PlayerCardProps {
-  playerName: string
-  team: string
-  position: string
+  playerName: string;
+  team: string;
+  position: string;
   stats: {
-    points: number
-    rebounds: number
-    assists: number
-  }
-  form?: 'hot' | 'cold' | 'neutral'
-  imageUrl?: string
+    points: number;
+    rebounds: number;
+    assists: number;
+  };
+  form?: 'hot' | 'cold' | 'neutral';
+  imageUrl?: string;
 }
 
 export default function PlayerCard({
@@ -28,30 +28,27 @@ export default function PlayerCard({
     hot: 'bg-orange-600',
     cold: 'bg-blue-600',
     neutral: 'bg-gray-600',
-  }
+  };
 
   return (
-    <div className="bg-bg-tertiary border border-border-light rounded-lg overflow-hidden hover:border-accent-orange transition group cursor-pointer">
+    <div className="bg-bg-tertiary border-border-light hover:border-accent-orange group cursor-pointer overflow-hidden rounded-lg border transition">
       {/* Image Section */}
-      <div className="relative h-40 bg-bg-secondary overflow-hidden">
+      <div className="bg-bg-secondary relative h-40 overflow-hidden">
         {imageUrl ? (
-          <Image
-            src={imageUrl}
-            alt={playerName}
-            fill
-            className="object-cover"
-          />
+          <Image src={imageUrl} alt={playerName} fill className="object-cover" />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-text-tertiary">
+          <div className="text-text-tertiary flex h-full w-full items-center justify-center">
             <div className="text-center">
-              <div className="w-20 h-20 mx-auto bg-bg-light rounded-full mb-2" />
+              <div className="bg-bg-light mx-auto mb-2 h-20 w-20 rounded-full" />
               <p className="text-xs">Image Placeholder</p>
             </div>
           </div>
         )}
 
         {/* Form Badge */}
-        <div className={`absolute top-2 right-2 px-2 py-1 rounded text-xs font-bold text-white ${formColors[form]}`}>
+        <div
+          className={`absolute top-2 right-2 rounded px-2 py-1 text-xs font-bold text-white ${formColors[form]}`}
+        >
           {form.toUpperCase()}
         </div>
 
@@ -70,14 +67,14 @@ export default function PlayerCard({
       {/* Content Section */}
       <div className="p-3">
         <div className="mb-2">
-          <h3 className="font-bold text-text-primary text-sm group-hover:text-accent-orange transition">
+          <h3 className="text-text-primary group-hover:text-accent-orange text-sm font-bold transition">
             {playerName}
           </h3>
-          <p className="text-xs text-text-secondary">{position}</p>
+          <p className="text-text-secondary text-xs">{position}</p>
         </div>
 
-        <div className="mb-3 pb-3 border-b border-border-light">
-          <p className="text-xs text-text-tertiary">{team}</p>
+        <div className="border-border-light mb-3 border-b pb-3">
+          <p className="text-text-tertiary text-xs">{team}</p>
         </div>
 
         {/* Stats */}
@@ -97,11 +94,11 @@ export default function PlayerCard({
         </div>
 
         {/* Trend Indicator */}
-        <div className="mt-3 flex items-center gap-1 text-xs text-accent-orange">
+        <div className="text-accent-orange mt-3 flex items-center gap-1 text-xs">
           <TrendingUp size={12} />
           <span>+8.5% vs last week</span>
         </div>
       </div>
     </div>
-  )
+  );
 }
