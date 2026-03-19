@@ -1,6 +1,7 @@
 import { ChevronDownIcon, ChevronRightIcon } from '@/components/icons';
 import Image from 'next/image';
 import Link from 'next/link';
+import SportsImage from '@/app/assets/sports.webp';
 
 export default function Dashboard() {
   const RolesList = [
@@ -16,7 +17,16 @@ export default function Dashboard() {
     <div className="bg-bg-primary grid h-screen grid-cols-2">
       {/* Left side */}
       <div className="relative h-full">
-        <Image src="/sports.png" alt="Sports" fill className="object-fill" />
+        <Image
+          src={SportsImage}
+          alt="Sports"
+          fill
+          sizes="50vw"
+          className="object-fill"
+          priority
+          placeholder="blur"
+          quality={85}
+        />
       </div>
 
       {/* Right side */}
