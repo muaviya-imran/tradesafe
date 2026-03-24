@@ -16,7 +16,7 @@ export default function Navbar({ setCurrentTabId, currentTabId }: NavbarProps) {
   ];
 
   return (
-    <div className="flex items-center justify-between border-y py-2">
+    <div className="flex items-center justify-between border-y py-3">
       <div className="flex gap-5">
         {NavItems.map((item) => (
           <span
