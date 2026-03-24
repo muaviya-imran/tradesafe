@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, ExternalLink, Sparkles } from 'lucide-react';
+import { Send, ExternalLink, Sparkles, Home } from 'lucide-react';
+import Link from 'next/link';
 
 interface Message {
   id: string;
@@ -73,16 +74,21 @@ export default function ChatPage() {
   return (
     <div className="bg-bg-primary flex h-screen flex-col">
       <div className="border-border-light bg-bg-secondary border-b px-6 py-4">
-        <div className="mx-auto flex max-w-350 items-center gap-3">
-          <div className="bg-accent-gold flex h-10 w-10 items-center justify-center rounded-lg">
-            <Sparkles className="text-bg-primary" size={20} />
+        <div className="mx-auto flex max-w-350 items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="bg-accent-gold flex h-10 w-10 items-center justify-center rounded-lg">
+              <Sparkles className="text-bg-primary" size={20} />
+            </div>
+            <div>
+              <h1 className="text-text-primary text-xl font-bold">AI Cap Strategist</h1>
+              <p className="text-text-secondary text-sm">
+                Powered by NBA CBA regulations and legal documentation
+              </p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-text-primary text-xl font-bold">AI Cap Strategist</h1>
-            <p className="text-text-secondary text-sm">
-              Powered by NBA CBA regulations and legal documentation
-            </p>
-          </div>
+          <Link href="/" className="cursor-pointer rounded-full bg-white/10 p-2">
+            <Home size={24} />
+          </Link>
         </div>
       </div>
 
