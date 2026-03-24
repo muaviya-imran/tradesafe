@@ -73,7 +73,7 @@ export default function ChatPage() {
   return (
     <div className="bg-bg-primary flex h-screen flex-col">
       <div className="border-border-light bg-bg-secondary border-b px-6 py-4">
-        <div className="mx-auto flex max-w-5xl items-center gap-3">
+        <div className="mx-auto flex max-w-350 items-center gap-3">
           <div className="bg-accent-gold flex h-10 w-10 items-center justify-center rounded-lg">
             <Sparkles className="text-bg-primary" size={20} />
           </div>
@@ -87,7 +87,7 @@ export default function ChatPage() {
       </div>
 
       <div className="flex-1 overflow-y-auto px-6 py-6">
-        <div className="mx-auto max-w-5xl space-y-4">
+        <div className="mx-auto max-w-7xl space-y-4">
           {messages.map((message) => (
             <div
               key={message.id}
@@ -133,7 +133,7 @@ export default function ChatPage() {
       </div>
 
       <div className="border-border-light bg-bg-secondary border-t px-6 py-4">
-        <div className="mx-auto flex max-w-5xl gap-3">
+        <div className="mx-auto flex max-w-350 gap-3">
           <input
             type="text"
             value={inputValue}

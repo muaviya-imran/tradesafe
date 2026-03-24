@@ -21,7 +21,7 @@ export default function Dashboard() {
         </Link>
       </h2>
       <Navbar setCurrentTabId={setCurrentTabId} currentTabId={currentTabId} />
-      <div className="mx-auto w-full max-w-7xl space-y-4">
+      <div className="mx-auto w-full max-w-350 space-y-4">
         <Stats />
         <div className="flex gap-4">
           <PlayerTable />
