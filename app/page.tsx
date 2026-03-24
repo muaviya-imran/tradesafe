@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SportsImage from '@/app/assets/sports.webp';
 
-export default function Dashboard() {
+export default function Dashboard2() {
   const RolesList = [
     { name: 'Analytics Team', icon: '/icons/analytics.svg' },
     { name: 'Front Office Team', icon: '/icons/front_office.svg' },
